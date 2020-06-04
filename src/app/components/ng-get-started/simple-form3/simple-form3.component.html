@@ -1,0 +1,4 @@
+<div>
+  <input #myInput type="text" (keydown.enter)="onEnter($event, myInput.value)">
+  <button (click)="onClick($event, myInput.value)">點擊</button>
+</div>

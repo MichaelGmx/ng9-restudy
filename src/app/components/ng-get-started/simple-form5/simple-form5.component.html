@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let message of mailService.messages; index as i;">
+    {{i}} - {{message}}
+  </li>
+</ul>
+<p style="font-size: 12px; color: #f00;">使用*ngFor *ngIf等，需要在子Module中import CommonModule</p>

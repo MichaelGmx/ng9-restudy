@@ -1,0 +1,61 @@
+<div class="card">
+  <h1>創建組件</h1>
+  <app-simple-form1></app-simple-form1>
+</div>
+
+
+<div class="card">
+  <h1>事件和模板引用</h1>
+  <app-simple-form2></app-simple-form2>
+</div>
+
+
+<div class="card">
+  <h1>事件进阶</h1>
+  <app-simple-form3></app-simple-form3>
+</div>
+
+
+<div class="card">
+  <h1>注入服务</h1>
+  <app-simple-form4></app-simple-form4>
+</div>
+
+
+<div class="card">
+  <h1>使用 ngFor 指令</h1>
+  <app-simple-form5></app-simple-form5>
+</div>
+
+
+<div class="card">
+  <h1>使用 Input 装饰器</h1>
+  <app-simple-form6 [message]="homePageMsg"></app-simple-form6>
+</div>
+
+
+<div class="card">
+  <h1>使用 Output 装饰器</h1>
+  <p>{{changeMsg}}</p>
+  <app-simple-form7 [count]="initialCount" (change)="countChange($event)"></app-simple-form7>
+</div>
+
+
+<div class="card">
+  <h1>使用双向绑定</h1>
+  <p>父组件当前值：{{ initialName }}</p>
+  <app-simple-form8 [(name)]="initialName"></app-simple-form8>
+</div>
+
+
+<div class="card">
+  <h1>使用ngModel</h1>
+  <app-simple-form9></app-simple-form9>
+</div>
+
+
+
+<div class="card">
+  <h1>组件样式</h1>
+  <app-simple-form10></app-simple-form10>
+</div>

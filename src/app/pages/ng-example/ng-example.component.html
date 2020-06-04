@@ -1,0 +1,3 @@
+<p *ngIf="!objAttrSelect">選擇下面顏色：</p>
+<p *ngIf="objAttrSelect">選中顏色：{{objAttrSelect.AttrDesci}}</p>
+<app-attr-select [attrs]="lstOfAttr" (itemSelect)="onChange($event)"></app-attr-select>

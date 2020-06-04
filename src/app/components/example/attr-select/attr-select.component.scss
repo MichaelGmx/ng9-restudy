@@ -1,0 +1,14 @@
+button {
+  display: inline-block;
+  background: transparent;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: solid 1px #ccc;
+  border-radius: 6px;
+  padding: 2px 8px;
+  outline: none;
+
+  &.select {
+    background-color: #ccc;
+  }
+}

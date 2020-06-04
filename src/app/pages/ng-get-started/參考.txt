@@ -1,0 +1,5 @@
+Angular 修仙之路
+https://segmentfault.com/a/1190000008754631
+
+Angular 6.x 基础教程
+https://semlinker.com/ng-base-tutorial/#%E7%AC%AC%E5%8D%81%E8%8A%82-%E7%BB%84%E4%BB%B6%E6%A0%B7%E5%BC%8F
