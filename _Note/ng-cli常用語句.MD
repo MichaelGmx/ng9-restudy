@@ -9,4 +9,12 @@ ng g c pages/pagename -S
 // -S 是 --skipTests=true 創建組件時，不建立測試文件(*.spec.ts)
 ```
 
+在创建component时，如果同一个目录下有多个module，需要指定创建时导入至哪一个module中
+```code
+// 格式：
+ng g m pages/pagename --module modulename
 
+// 例子：
+ng g m pages/home --module app
+ng g m pages/home --module=app.module
+```

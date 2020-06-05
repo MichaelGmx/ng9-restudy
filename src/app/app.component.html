@@ -12,26 +12,12 @@
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Angular" nzIcon="ant-design">
+
+      <li *ngFor="let router of routers"
+        nz-submenu nzOpen [nzTitle]="router.title" [nzIcon]="router.icon">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/ng-get-started">Angular6.x 入门</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/ng-example">Angular Example</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/test">Test</a>
-          </li>
-        </ul>
-      </li>
-      <li nz-submenu nzOpen nzTitle="Rxjs" nzIcon="ant-design">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/rxjs-get-started">Rxjs入门</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/rxjs-example">Rxjs 常用</a>
+          <li *ngFor="let link of router.children" nz-menu-item nzMatchRouter>
+            <a [routerLink]="link.routerLink">{{link.routerName}}</a>
           </li>
         </ul>
       </li>
