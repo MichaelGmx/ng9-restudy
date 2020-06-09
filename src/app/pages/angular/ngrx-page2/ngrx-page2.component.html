@@ -1,0 +1,22 @@
+<h2>商品列表：</h2>
+<ul>
+  <li *ngFor="let product of productList">
+    <p>{{product.DesciName}}</p>
+    <button (click)="addProductToCart(product)">加入购物车</button>
+  </li>
+</ul>
+
+<hr>
+
+<button (click)="clearCart()">清空购物车</button>
+
+<hr>
+
+<h2>购物车({{currentCount}})：</h2>
+<ul>
+  <li *ngFor="let product of cartProductList">
+    <p>
+      {{product.DesciName}} x {{product.Qty}}
+    </p>
+  </li>
+</ul>
