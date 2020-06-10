@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AttrSelectComponent } from './attr-select/attr-select.component';
+import { DomEventComponent } from './dom-event/dom-event.component';
 
 
 
 @NgModule({
   declarations: [
-    AttrSelectComponent
+    AttrSelectComponent,
+    DomEventComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    AttrSelectComponent
+    AttrSelectComponent,
+    DomEventComponent
   ]
 })
 export class ExampleComponentsModule { }
