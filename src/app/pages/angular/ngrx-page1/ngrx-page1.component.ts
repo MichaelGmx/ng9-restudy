@@ -4,6 +4,7 @@ import { CartStoreModule } from 'src/app/store/cart/cart.store.module';
 import { getProductList, getCurrentCount } from 'src/app/store/cart/selector/cart.selector';
 import { Product } from 'src/app/types/product';
 import { SetProductList, SetCurrentCount } from 'src/app/store/cart/actions/cart.action';
+import { deepCopyArray } from 'src/app/utils/array';
 
 @Component({
   selector: 'app-ngrx-page1',
@@ -80,8 +81,4 @@ export class NgrxPage1Component implements OnInit {
     this.currentCount = count;
   }
 
-}
-
-export function deepCopyArray(source: any): any {
-  return [].concat(JSON.parse(JSON.stringify(source)));
 }
