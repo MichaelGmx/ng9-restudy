@@ -18,4 +18,4 @@ import { DomEventComponent } from './dom-event/dom-event.component';
     DomEventComponent
   ]
 })
-export class ExampleComponentsModule { }
+export class NgExampleComponentsModule { }

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AngularRoutingModule } from './angular-routing.module';
 
-import { ExampleComponentsModule } from 'src/app/components/example/example.components.module';
+import { NgExampleComponentsModule } from 'src/app/components/ng-example/ng-example.components.module';
 import { NgGetStartedComponentsModule } from 'src/app/components/ng-get-started/ng-get-started.components.module';
 
 import { AngularComponent } from './main/angular.component';
@@ -28,7 +28,7 @@ import { CartStoreModule } from 'src/app/store/cart/cart.store.module';
     FormsModule,
 
     // 组件
-    ExampleComponentsModule,
+    NgExampleComponentsModule,
     NgGetStartedComponentsModule,
 
     // ngrx/store 购物车
