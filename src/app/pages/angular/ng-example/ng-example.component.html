@@ -1,3 +1,11 @@
-<p *ngIf="!objAttrSelect">選擇下面顏色：</p>
-<p *ngIf="objAttrSelect">選中顏色：{{objAttrSelect.AttrDesci}}</p>
-<app-attr-select [attrs]="lstOfAttr" (itemSelect)="onChange($event)"></app-attr-select>
+<section class="card">
+  <h2>属性选择器 attr-select</h2>
+  <p *ngIf="!objAttrSelect">選擇下面顏色：</p>
+  <p *ngIf="objAttrSelect">選中顏色：{{objAttrSelect.AttrDesci}}</p>
+  <app-attr-select [attrs]="lstOfAttr" (itemSelect)="onChange($event)"></app-attr-select>
+</section>
+
+<section class="card">
+  <h2>dom-event</h2>
+  <app-dom-event></app-dom-event>
+</section>
