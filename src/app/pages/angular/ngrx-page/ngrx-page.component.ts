@@ -7,12 +7,11 @@ import { SetProductList, SetCurrentCount } from 'src/app/store/cart/actions/cart
 import { deepCopyArray } from 'src/app/utils/array';
 
 @Component({
-  selector: 'app-ngrx-page2',
-  templateUrl: './ngrx-page2.component.html',
-  styleUrls: ['./ngrx-page2.component.scss']
+  selector: 'app-ngrx-page',
+  templateUrl: './ngrx-page.component.html',
+  styleUrls: ['./ngrx-page.component.scss']
 })
-export class NgrxPage2Component implements OnInit {
-
+export class NgrxPageComponent implements OnInit {
   productList: Product[] = [
     { PLU: 'AAA', DesciName: 'AAA商品', Qty: 0 },
     { PLU: 'BBB', DesciName: 'BBB商品', Qty: 0 },
@@ -49,9 +48,9 @@ export class NgrxPage2Component implements OnInit {
   }
 
   // 商品 加入购物车
-  addProductToCart(product: Product) {
+  addProductToCart(event: Product) {
     const tmpList = deepCopyArray(this.cartProductList);
-    const tmpProduct = JSON.parse(JSON.stringify(product));
+    const tmpProduct = JSON.parse(JSON.stringify(event));
     if (tmpList.length > 0) {
       const findOne = tmpList.find(item => item.PLU === tmpProduct.PLU);
       if (findOne) {

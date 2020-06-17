@@ -5,7 +5,7 @@ import { ServicesModule } from './services.module';
   providedIn: ServicesModule
 })
 export class MailService {
-  message: string = '該消息來自MailService';
+  message = '該消息來自MailService';
 
   messages: string[] = [
     'Angluar',

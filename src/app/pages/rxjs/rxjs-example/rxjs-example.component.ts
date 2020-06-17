@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { of, concat, timer, interval, Observable } from 'rxjs';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { of, concat, timer, interval, Observable, fromEvent } from 'rxjs';
 import { concatMap, delay, mergeMap, switchMap } from 'rxjs/operators';
-// import { concat } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs-example',
@@ -9,6 +8,7 @@ import { concatMap, delay, mergeMap, switchMap } from 'rxjs/operators';
   styleUrls: ['./rxjs-example.component.scss']
 })
 export class RxjsExampleComponent implements OnInit {
+  @ViewChild('myBtn', {static: true}) myBtn: ElementRef;
 
   // /**
   //  * concat
@@ -28,18 +28,18 @@ export class RxjsExampleComponent implements OnInit {
   // // Example: Basic concat: 5
   // // Example: Basic concat: 6
 
-  /**
-   * concatMap
-   * -- 将值映射成内部 observable，并按顺序订阅和发出。
-   */
-  source = of(2000, 1000);
-  example = this.source.pipe(
-    concatMap(val => of(`Delayed by: ${val}ms`).pipe(delay(val)))
-  );
+  // /**
+  //  * concatMap
+  //  * -- 将值映射成内部 observable，并按顺序订阅和发出。
+  //  */
+  // source = of(2000, 1000);
+  // example = this.source.pipe(
+  //   concatMap(val => of(`Delayed by: ${val}ms`).pipe(delay(val)))
+  // );
 
-  subscribe = this.example.subscribe(val => {
-    console.log(`With concatMap: ${val}`);
-  });
+  // subscribe = this.example.subscribe(val => {
+  //   console.log(`With concatMap: ${val}`);
+  // });
 
 
   // /**
@@ -54,17 +54,24 @@ export class RxjsExampleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    /**
+     * switchMap 示例 - 触发部分
+     * 点击按钮，使用switchMap，只获取最后一次得到的值
+     */
+    const btnClick$ = fromEvent(this.myBtn.nativeElement, 'click');
+    btnClick$.pipe(
+      switchMap(_ => this.getKeyWors())
+    ).subscribe(res => console.log(res));
   }
 
-  onTyping(event) {
-    console.log(event.target.value);
-    // this.getKeyWors()
-    //   .pipe(
-    //     switchMap(() => interval(500))
-    //   ).subscribe(res => console.log(res));
-  }
-
+  /**
+   * switchMap 示例 - 请求部分
+   * 假设请求需要较长时间才返回
+   */
   private getKeyWors(): Observable<string[]> {
-    return of(['asdf', 'ert', 'zxcv']);
+    return of(['asdf', 'ert', 'zxcv']).pipe(
+      delay(3000)
+    );
   }
 }

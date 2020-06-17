@@ -1,0 +1,19 @@
+<div>
+  <section class="card">
+    <app-ngrx1 [productList]="productList"
+             [cartList]="cartProductList"
+             [cartCount]="currentCount"
+             (addToCart)="addProductToCart($event)"
+             (clearCart)="clearCart()">
+    </app-ngrx1>
+  </section>
+  
+  <section class="card">
+    <app-ngrx2 [productList]="productList"
+             [cartList]="cartProductList"
+             [cartCount]="currentCount"
+             (addToCart)="addProductToCart($event)"
+             (clearCart)="clearCart()">
+    </app-ngrx2>
+  </section>
+</div>
