@@ -15,7 +15,8 @@ export class AppComponent {
       { routerName: 'Angular 动画', routerLink: '/angular/ng-animation' },
       { routerName: 'ngrx 示例', routerLink: '/angular/ngrx' },
       { routerName: 'angularx-qrcode 示例', routerLink: '/angular/angularx-qrcode' },
-      { routerName: 'html2canvas 示例', routerLink: '/angular/html2canvas' }
+      { routerName: 'html2canvas 示例', routerLink: '/angular/html2canvas' },
+      { routerName: 'Inject 依赖注入', routerLink: '/angular/inject' }
     ]},
     { title: 'Rxjs', icon: 'ant-design', children: [
       { routerName: 'Rxjs入门', routerLink: '/rxjs/rxjs-get-started' },

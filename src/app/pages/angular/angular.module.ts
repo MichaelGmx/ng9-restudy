@@ -17,6 +17,7 @@ import { NgAnimationComponent } from './ng-animation/ng-animation.component';
 import { AngularxQrcodeComponent } from './angularx-qrcode/angularx-qrcode.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { Html2canvasComponent } from './html2canvas/html2canvas.component';
+import { InjectComponent } from './inject/inject.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { Html2canvasComponent } from './html2canvas/html2canvas.component';
     NgrxPageComponent,
     NgAnimationComponent,
     AngularxQrcodeComponent,
-    Html2canvasComponent
+    Html2canvasComponent,
+    InjectComponent
   ],
   imports: [
     CommonModule,

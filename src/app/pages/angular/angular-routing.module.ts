@@ -7,6 +7,7 @@ import { NgrxPageComponent } from './ngrx-page/ngrx-page.component';
 import { NgAnimationComponent } from './ng-animation/ng-animation.component';
 import { AngularxQrcodeComponent } from './angularx-qrcode/angularx-qrcode.component';
 import { Html2canvasComponent } from './html2canvas/html2canvas.component';
+import { InjectComponent } from './inject/inject.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'ng-animation', component: NgAnimationComponent },
   { path: 'angularx-qrcode', component: AngularxQrcodeComponent },
   { path: 'html2canvas', component: Html2canvasComponent },
+  { path: 'inject', component: InjectComponent },
   { path: '', component: MainComponent }
   // { path: '**', redirectTo: '/angular' }
   // { path: '**', component: MainComponent }
