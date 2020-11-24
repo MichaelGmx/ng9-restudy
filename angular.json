@@ -36,7 +36,9 @@
               "src/theme.less",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              { "input": "node_modules/html2canvas/dist/html2canvas.min.js" }
+            ]
           },
           "configurations": {
             "production": {

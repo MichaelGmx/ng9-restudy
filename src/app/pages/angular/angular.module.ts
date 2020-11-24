@@ -14,6 +14,9 @@ import { NgExampleComponent } from './ng-example/ng-example.component';
 import { NgrxPageComponent } from './ngrx-page/ngrx-page.component';
 import { MainComponent } from './main/main.component';
 import { NgAnimationComponent } from './ng-animation/ng-animation.component';
+import { AngularxQrcodeComponent } from './angularx-qrcode/angularx-qrcode.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { Html2canvasComponent } from './html2canvas/html2canvas.component';
 
 
 @NgModule({
@@ -22,7 +25,9 @@ import { NgAnimationComponent } from './ng-animation/ng-animation.component';
     NgGetStartedComponent,
     NgExampleComponent,
     NgrxPageComponent,
-    NgAnimationComponent
+    NgAnimationComponent,
+    AngularxQrcodeComponent,
+    Html2canvasComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +39,9 @@ import { NgAnimationComponent } from './ng-animation/ng-animation.component';
 
     // ngrx/store 购物车
     CartStoreModule,
+
+    // angularx-qrcode
+    QRCodeModule,
 
     // 路由
     AngularRoutingModule
