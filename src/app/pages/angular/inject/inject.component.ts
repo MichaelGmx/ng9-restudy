@@ -55,8 +55,8 @@ export default class Car {
 // car.run();
 
 // 所以使用StaticInjector重构如下：
-const injector = Injector.create([{ provide: Car, useClass: Car, deps: [ Engine, Chassis, Body ] }]);
-const car = injector.get(Car);
-car.run();
+// const injector = Injector.create([{ provide: Car, useClass: Car, deps: [ Engine, Chassis, Body ] }]);
+// const car = injector.get(Car);
+// car.run();
 
 // 注意：大部分情况是不会如上面手动写注入依赖的，ReflectiveInjector、StaticInjector也是在main.ts的入口文件中有使用。

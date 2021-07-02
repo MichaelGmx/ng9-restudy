@@ -7,11 +7,11 @@ import { SetProductList, SetCurrentCount } from 'src/app/store/cart/actions/cart
 import { deepCopyArray } from 'src/app/utils/array';
 
 @Component({
-  selector: 'app-ngrx-page',
-  templateUrl: './ngrx-page.component.html',
-  styleUrls: ['./ngrx-page.component.scss']
+  selector: 'app-ngrx-demo',
+  templateUrl: './ngrx-demo.component.html',
+  styleUrls: ['./ngrx-demo.component.scss']
 })
-export class NgrxPageComponent implements OnInit {
+export class NgrxDemoComponent implements OnInit {
   productList: Product[] = [
     { PLU: 'AAA', DesciName: 'AAA商品', Qty: 0 },
     { PLU: 'BBB', DesciName: 'BBB商品', Qty: 0 },

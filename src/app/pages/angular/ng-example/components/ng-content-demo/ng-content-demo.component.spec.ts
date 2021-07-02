@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgrxPageComponent } from './ngrx-page.component';
+import { NgContentDemoComponent } from './ng-content-demo.component';
 
-describe('NgrxPageComponent', () => {
-  let component: NgrxPageComponent;
-  let fixture: ComponentFixture<NgrxPageComponent>;
+describe('NgContentDemoComponent', () => {
+  let component: NgContentDemoComponent;
+  let fixture: ComponentFixture<NgContentDemoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgrxPageComponent ]
+      declarations: [ NgContentDemoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgrxPageComponent);
+    fixture = TestBed.createComponent(NgContentDemoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

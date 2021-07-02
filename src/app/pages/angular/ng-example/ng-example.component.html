@@ -1,11 +1,139 @@
 <section class="card">
-  <h2>属性选择器 attr-select</h2>
+  <h2><code>@Input</code>、<code>@Output</code>示例</h2>
+
   <p *ngIf="!objAttrSelect">選擇下面顏色：</p>
   <p *ngIf="objAttrSelect">選中顏色：{{objAttrSelect.AttrDesci}}</p>
   <app-attr-select [attrs]="lstOfAttr" (itemSelect)="onChange($event)"></app-attr-select>
 </section>
 
+
+
+<section class="card">
+  <h2><code>@Directive</code>、<code>@HostListener</code> 属性型指令 示例</h2>
+  <p>官方解釋https://angular.cn/guide/attribute-directives</p>
+
+  <p appHighlight>此处背景将高亮</p>
+  <br>
+  <p appHighlight defaultColor="violet">此处背景将高亮，使用了默认颜色</p>
+  <br>
+  <p appHighlight="yellow">Highlighted in yellow</p>
+  <br>
+  <p [appHighlight]="'orange'">Highlighted in orange</p>
+
+  <button counting>点击按钮，查看console</button>
+</section>
+
+
+
+<section class="card">
+  <h2><code>ng-template</code> 结构型指令 示例</h2>
+  <p>*符号修饰的*ngIf、*ngFor仅是语法糖，具体依然是被转换为ng-template的模板</p>
+  <p>可以参考官方解释https://angular.cn/guide/structural-directives</p>
+
+  <!-- <div *ngIf="demoCondition">會顯示</div>
+  <div *ngIf="!demoCondition">不會顯示</div> -->
+  <ng-template [ngIf]="demoCondition">
+    <div>會顯示</div>
+  </ng-template>
+  <ng-template [ngIf]="!demoCondition">
+    <div>不會顯示</div>
+  </ng-template>
+  <!-- <div *ngFor="let hero of heroes; let i=index; let odd=odd; trackBy: trackById" [class.odd]="odd">
+    {{ i }} {{ hero.name }}
+  </div> -->
+  <ng-template ngFor let-hero [ngForOf]="heroes" let-i="index" let-odd="odd" [ngForTrackBy]="trackById">
+    <div [class.odd]="odd">{{ i }} {{ hero.name }}</div>
+  </ng-template>
+</section>
+
+
+
+<section class="card">
+  <h2>自定义 结构型指令</h2>
+  <p *appUnless="demoCondition">
+    (A) This paragraph is displayed because the condition is false.
+  </p>
+  <p *appUnless="!demoCondition">
+    (B) This paragraph is displayed because the condition is true.
+  </p>
+</section>
+
+
+
+<section class="card">
+  <h2>@Pipe 示例</h2>
+  Time: {{ time | async | date: 'yyyy-MM-dd HH:mm:ss' }}
+</section>
+
+
+
+<section class="card">
+  <h2><code>@Injectable</code> Angular Service 單例服務示例</h2>
+  <p>重點注意Service中，providedIn參數 'root'(為根部注入)、'any'（ng9+，視注入的地方）</p>
+
+  <p>
+    讀取信息：
+    <span *ngIf="username">{{ username }}</span>
+  </p>
+  <button (click)="save()">保存</button>
+  <button (click)="load()">讀取</button>
+</section>
+
+
+
+<section class="card">
+  <h2><code>ng-content</code>示例</h2>
+  <p>ng-content select的使用：</p>
+
+  <app-ng-content-demo>
+    開始，外部嵌入內容，
+    <header>外部嵌入內容，header中</header>
+    <div class="demo2">外部嵌入內容，.demo2中</div>
+    <div name="demo3">外部嵌入內容，name=demo3中</div>
+    結束
+  </app-ng-content-demo>
+</section>
+
+
+
+<section class="card">
+  <h2><code>ng-container</code>示例</h2>
+  <p>为避免在同一宿主元素使用多个结构型指令：</p>
+
+  <ng-container *ngIf="demoCondition">
+    <label *ngFor="let item of demoList">{{ item }}、</label>
+  </ng-container>
+</section>
+
+
+
+<section class="card">
+  <h2><code>NgForm</code></h2>
+
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" novalidate>
+    <input name="first" ngModel required #first="ngModel">
+    <input name="last" ngModel>
+    <button>Submit</button>
+  </form>
+  
+  <p>First name value: {{ first.value }}</p>
+  <p>First name valid: {{ first.valid }}</p>
+  <p>Form value: {{ myForm.value | json }}</p>
+  <p>Form valid: {{ myForm.valid }}</p>
+</section>
+
+
+
 <section class="card">
   <h2>dom-event</h2>
   <app-dom-event></app-dom-event>
+</section>
+
+
+
+<section class="card">
+  <h2>Hierarchical Dependency Injection</h2>
+  <p>參考：https://angular.cn/guide/hierarchical-dependency-injection#scenario-multiple-edit-sessions</p>
+
+  <app-heroes-list></app-heroes-list>
 </section>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { AppConfig, APP_CONFIG } from './app.config';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,9 @@ export class AppComponent {
       { routerName: 'Angular6.x 入门', routerLink: '/angular/ng-get-started' },
       { routerName: 'Angular Example', routerLink: '/angular/ng-example' },
       { routerName: 'Angular 动画', routerLink: '/angular/ng-animation' },
+      { routerName: 'Inject 依赖注入', routerLink: '/angular/inject' },
       { routerName: 'ngrx 示例', routerLink: '/angular/ngrx' },
-      { routerName: 'angularx-qrcode 示例', routerLink: '/angular/angularx-qrcode' },
-      { routerName: 'html2canvas 示例', routerLink: '/angular/html2canvas' },
-      { routerName: 'Inject 依赖注入', routerLink: '/angular/inject' }
+      { routerName: '第三方插件', routerLink: '/angular/third-party' }
     ]},
     { title: 'Rxjs', icon: 'ant-design', children: [
       { routerName: 'Rxjs入门', routerLink: '/rxjs/rxjs-get-started' },
@@ -26,4 +26,8 @@ export class AppComponent {
       { routerName: 'Test', routerLink: '/test' }
     ]}
   ];
+
+  constructor(@Inject(APP_CONFIG) config : AppConfig) {
+    console.log(config.title);
+  }
 }

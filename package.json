@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
+    "start": "ng serve --open --host 192.168.3.103",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -21,9 +21,13 @@
     "@angular/router": "~9.1.6",
     "@ngrx/store": "^8.3.0",
     "@ngrx/store-devtools": "^9.2.0",
+    "@types/jquery": "^3.5.5",
     "angularx-qrcode": "^2.3.4",
     "html2canvas": "^1.0.0-rc.5",
+    "inputmask": "^5.0.5",
+    "jquery": "^3.5.1",
     "ng-zorro-antd": "^9.1.2",
+    "ng2-inputmask": "^0.2.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

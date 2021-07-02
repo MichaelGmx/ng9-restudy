@@ -13,35 +13,25 @@ import { SimpleForm8Component } from './simple-form8/simple-form8.component';
 import { SimpleForm9Component } from './simple-form9/simple-form9.component';
 import { SimpleForm10Component } from './simple-form10/simple-form10.component';
 
+const components = [
+  SimpleForm1Component,
+  SimpleForm2Component,
+  SimpleForm3Component,
+  SimpleForm4Component,
+  SimpleForm5Component,
+  SimpleForm6Component,
+  SimpleForm7Component,
+  SimpleForm8Component,
+  SimpleForm9Component,
+  SimpleForm10Component
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule
   ],
-  declarations: [
-    SimpleForm1Component,
-    SimpleForm2Component,
-    SimpleForm3Component,
-    SimpleForm4Component,
-    SimpleForm5Component,
-    SimpleForm6Component,
-    SimpleForm7Component,
-    SimpleForm8Component,
-    SimpleForm9Component,
-    SimpleForm10Component
-  ],
-  exports: [
-    SimpleForm1Component,
-    SimpleForm2Component,
-    SimpleForm3Component,
-    SimpleForm4Component,
-    SimpleForm5Component,
-    SimpleForm6Component,
-    SimpleForm7Component,
-    SimpleForm8Component,
-    SimpleForm9Component,
-    SimpleForm10Component
-  ]
+  declarations: components,
+  exports: components
 })
 export class NgGetStartedComponentsModule { }

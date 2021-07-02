@@ -15,6 +15,7 @@ import { zh_CN } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { ServicesModule } from './services/services.module';
+import { APP_CONFIG, HERO_DI_CONFIG } from './app.config';
 
 registerLocaleData(zh);
 
@@ -33,7 +34,10 @@ registerLocaleData(zh);
     FormsModule,
     ServicesModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [
+    { provide: NZ_I18N, useValue: zh_CN },
+    { provide: APP_CONFIG, useValue: HERO_DI_CONFIG }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

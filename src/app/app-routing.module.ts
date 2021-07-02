@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AngularRoutingModule } from './pages/angular/angular-routing.module';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
@@ -19,8 +18,7 @@ const routes: Routes = [
     NotFoundPageComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
-    AngularRoutingModule
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })

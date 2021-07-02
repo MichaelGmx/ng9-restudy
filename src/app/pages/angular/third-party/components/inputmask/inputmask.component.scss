@@ -1,0 +1,14 @@
+input {
+  font-size: 20px;
+  color: #333;
+  padding-left: 10px;
+
+  text-transform: uppercase;
+
+  border: none;
+  border-bottom: solid 1px #ddd;
+
+  &::placeholder {
+    color: #ddd;
+  }
+}
